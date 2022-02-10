@@ -40,6 +40,7 @@ class Livro(models.Model):
         on_delete=models.PROTECT,
         related_name="livros"
     )
+    autores = models.ManyToManyField(Autor, related_name="livros")
 
     def __str__(self):
         return "%s (%s)" %(self.titulo, self.editora)
